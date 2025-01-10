@@ -1,0 +1,138 @@
+/* General Reset */
+body, h1, p, a, button, nav {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-image: url('https://images7.alphacoders.com/134/1340411.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    padding: 20px; /* Add padding for spacing */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between; /* Space out nav and h1 */
+    align-items: center; /* Center items vertically */
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+/* Navigation Links */
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Align h1 to the right */
+header a h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-left: auto; /* Push the h1 to the right */
+    margin-right: 50px; /* Move the h1 slightly left */
+    color: white;
+}
+
+/* Main Content */
+main {
+    margin-top: 100px; /* Add space to avoid overlap with the fixed header */
+}
+
+main h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Slightly dark background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Style the navigation links in the footer */
+footer ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0;
+}
+
+footer ul li {
+    display: inline; /* Display list items in a row */
+    margin: 0 15px; /* Add space between links */
+}
+
+footer a {
+    color: white;
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+}
+
+footer a i {
+    margin-right: 8px; /* Add space between icon and text */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
