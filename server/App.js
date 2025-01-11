@@ -1,5 +1,7 @@
 const express = require("express");
 const path = require("path"); // Import the path module
+const helmet = require("helmet");
+
 const app = express();
 const port = 3001;
 
@@ -7,6 +9,28 @@ const port = 3001;
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
 
 app.use(express.static(path.join(__dirname, '..', 'client', 'views')));
+
+
+
+
+// Use Helmet to set CSP
+app.use(
+    helmet.contentSecurityPolicy({
+      directives: {
+        defaultSrc: ["'self'"], // Allow content only from the same origin
+        scriptSrc: ["'self'"], // Block inline JavaScript and third-party scripts
+        styleSrc: ["'self'", "'unsafe-inline'"], // Allow inline styles only if needed
+        imgSrc: ["'self'", "data:"], // Allow images from the same origin and data URIs
+        objectSrc: ["'none'"], // Disallow <object>, <embed>, and <applet>
+        frameSrc: ["'none'"], // Disallow iframes
+        connectSrc: ["'self'"], // Allow XHR/WebSocket connections only to the same origin
+        fontSrc: ["'self'"], // Allow fonts only from the same origin
+        upgradeInsecureRequests: [], // Enforce HTTPS
+      },
+    })
+  );
+  
+
 
 
 
@@ -36,6 +60,18 @@ app.get('/about', (req, res) => {
 app.get('/blogs', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'views', 'blogs.html')); // Serve blogs.html from 'client/views'
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Start the server
 app.listen(port, () => {
